@@ -1,3 +1,7 @@
+;; prevent filesystem pollution (we're under git, so...)
+(setq backup-inhibited t)
+(setq auto-save-default nil)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; pluggins
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -50,12 +54,34 @@
 ;;	      (when (equal major-mode 'python-mode)
 ;;		(python-pylint))))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; ack
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; (add-to-list 'load-path "~/configs/emacs/plugins/ack-and-a-half/")
+;; (autoload 'ack-and-a-half-same "ack-and-a-half" nil t)
+;; (autoload 'ack-and-a-half "ack-and-a-half" nil t)
+;; (autoload 'ack-and-a-half-find-file-same "ack-and-a-half" nil t)
+;; (autoload 'ack-and-a-half-find-file "ack-and-a-half" nil t)
+;; ;; Create shorter aliases
+;; (defalias 'ack 'ack-and-a-half)
+;; (defalias 'ack-same 'ack-and-a-half-same)
+;; (defalias 'ack-find-file 'ack-and-a-half-find-file)
+;; (defalias 'ack-find-file-same 'ack-and-a-half-find-file-same)
 
-;; (add-to-list 'load-path "~/.emacs.d/plugins/helm/")
+;; (require 'ack-emacs)
+
+(add-to-list 'load-path "~/configs/emacs/plugins/full-ack")
+(autoload 'ack-same "full-ack" nil t)
+(autoload 'ack "full-ack" nil t)
+(autoload 'ack-find-same-file "full-ack" nil t)
+(autoload 'ack-find-file "full-ack" nil t)
+(setq ack-executable (executable-find "ack-grep"))
+
+;; (add-to-list 'load-path "~/configs/emacs/plugins/helm/")
 ;; (require 'helm-config)
-;; (helm-mode 1)
-;; (global-set-key (kbd "C-x C-f") 'helm-find-files)
-;; ;(global-set-key (kbd "C-c h") 'helm-mini)
+;(helm-mode 1)
+;(global-set-key (kbd "C-x C-f") 'helm-find-files)
+;(global-set-key (kbd "C-c h") 'helm-mini)
 
 ;; (require 'anything)
 ;; (require 'anything-ipython)
@@ -64,6 +90,10 @@
 ;; 				'(length initial-pattern)))
 ;; ;; don't know yet what anything does
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; C#
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(require 'csharp-mode)
 
 
 (custom-set-variables
