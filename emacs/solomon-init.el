@@ -1,6 +1,7 @@
 ;; prevent filesystem pollution (we're under git, so...)
 (setq backup-inhibited t)
 (setq auto-save-default nil)
+(global-linum-mode t)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; pluggins
@@ -129,3 +130,13 @@
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; theme
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(add-to-list 'load-path "~/configs/emacs/themes/")
+(require 'color-theme)
+;(color-theme-gnome2)
+(add-to-list 'load-path "~/configs/emacs/themes/emacs-color-theme-solarized/")
+(require 'color-theme-solarized)
+(color-theme-solarized-dark)
