@@ -50,6 +50,22 @@
 
 (require 'python-pylint)
 
+;; documentation
+(setq pylookup-dir "~/configs/emacs/plugins/python/pylookup/")
+(add-to-list 'load-path "~/configs/emacs/plugins/python/pylookup/")
+(eval-when-compile (require 'pylookup))
+(setq pylookup-program (concat pylookup-dir "/pylookup.py"))
+(setq pylookup-db-file (concat pylookup-dir "/pylookup.db"))
+(autoload 'pylookup-lookup "pylookup"
+  "Lookup SEARCH-TERM in the Python HTML indexes." t)
+(autoload 'pylookup-update "pylookup"
+  "Run pylookup-update and create the database at `pylookup-db-file'." t)
+(global-set-key "\C-ch" 'pylookup-lookup)
+(require 'w3m-load)
+(setq browse-url-browser-function 'w3m-browse-url)
+(setq browse-url-default-browser "firefox.exe")
+
+
 ;; (add-hook 'before-save-hook
 ;;	  #'(lambda()
 ;;	      (when (equal major-mode 'python-mode)
