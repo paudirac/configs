@@ -65,12 +65,6 @@
 (setq browse-url-browser-function 'w3m-browse-url)
 (setq browse-url-default-browser "firefox.exe")
 
-
-;; (add-hook 'before-save-hook
-;;	  #'(lambda()
-;;	      (when (equal major-mode 'python-mode)
-;;		(python-pylint))))
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; ack
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -94,38 +88,11 @@
 (autoload 'ack-find-file "full-ack" nil t)
 (setq ack-executable (executable-find "ack-grep"))
 
-;; (add-to-list 'load-path "~/configs/emacs/plugins/helm/")
-;; (require 'helm-config)
-;(helm-mode 1)
-;(global-set-key (kbd "C-x C-f") 'helm-find-files)
-;(global-set-key (kbd "C-c h") 'helm-mini)
-
-;; (require 'anything)
-;; (require 'anything-ipython)
-;; (when (require 'anything-show-completion nil t)
-;;   (use-anything-show-completion 'anything-ipython-complete
-;; 				'(length initial-pattern)))
-;; ;; don't know yet what anything does
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; C#
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (require 'csharp-mode)
 
-
-(custom-set-variables
-  ;; custom-set-variables was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
- '(column-number-mode t)
- '(show-paren-mode t))
-(custom-set-faces
-  ;; custom-set-faces was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
- )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Org mode
@@ -156,3 +123,20 @@
 (add-to-list 'load-path "~/configs/emacs/themes/emacs-color-theme-solarized/")
 (require 'color-theme-solarized)
 (color-theme-solarized-dark)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; emacs did it
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(custom-set-variables
+  ;; custom-set-variables was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
+ '(column-number-mode t)
+ '(show-paren-mode t))
+(custom-set-faces
+  ;; custom-set-faces was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
+ )
