@@ -3,6 +3,9 @@
 (setq auto-save-default nil)
 (global-linum-mode t)
 
+;; reload when changed in disk
+(global-auto-revert-mode t)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; pluggins
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -61,9 +64,9 @@
 (autoload 'pylookup-update "pylookup"
   "Run pylookup-update and create the database at `pylookup-db-file'." t)
 (global-set-key "\C-ch" 'pylookup-lookup)
-(require 'w3m-load)
-(setq browse-url-browser-function 'w3m-browse-url)
-(setq browse-url-default-browser "firefox.exe")
+;(require 'w3m-load)
+;(setq browse-url-browser-function 'w3m-browse-url)
+;(setq browse-url-default-browser "firefox.exe")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; ack
